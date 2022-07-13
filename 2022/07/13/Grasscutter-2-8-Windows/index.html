@@ -22,7 +22,7 @@
 
   
 
-  <title>Hello World | blog</title>
+  <title>Grasscutter-2.8-Windows | blog</title>
 
   
 
@@ -90,16 +90,24 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Hello World</h1>
+          <h1 class="title-wrap">Grasscutter-2.8-Windows</h1>
           <h2 class="title-sub-wrap">
             <strong>aucub</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2021-11-03T05:38:30.421Z" itemprop="datePublished">2021-11-03</time>
+            <time  class="article-date" datetime="2022-07-13T13:03:51.000Z" itemprop="datePublished">2022-07-13</time>
           </h2>
           <ul class="wrap-list dark">
   
 </ul>
           <ul class="wrap-list dark">
+  
+    <li><a href="/tags/Grasscutter/">🏷️ Grasscutter</a></li>
+  
+    <li><a href="/tags/2-8/">🏷️ 2.8</a></li>
+  
+    <li><a href="/tags/Windows/">🏷️ Windows</a></li>
+  
+    <li><a href="/tags/op/">🏷️ op</a></li>
   
 </ul>
         </div>
@@ -123,25 +131,46 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <p>Grasscutter割草机在Windows上的部署-2.8</p>
+<span id="more"></span>
+<h3 id="准备需要使用的文件和应用"><a href="#准备需要使用的文件和应用" class="headerlink" title="准备需要使用的文件和应用"></a>准备需要使用的文件和应用</h3><p>1.<a target="_blank" rel="noopener" href="https://codeload.github.com/Grasscutters/Grasscutter/zip/refs/heads/2.8">下载并解压适用于2.8的Grasscutter源代码（也可按需求选择其他版本）</a></p>
+<p>2.<a target="_blank" rel="noopener" href="https://codeload.github.com/Koko-boya/Grasscutter_Resources/zip/refs/heads/2.8">下载并解压适用于2.8的Grasscutter_Resources</a></p>
+<p>3.下载并<a target="_blank" rel="noopener" href="https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-5.0.9-signed.msi">安装MongoDB Community Server</a>，如无修改安装目录的需求一路点确认即可。</p>
+<p>4.准备op2.8非大陆版本的客户端，建议登陆一次，下载需要更新的资源，大陆版本也可。本文以非大陆版本为例，<del>GenshinImpact.exe</del>路径为<del>C:\Program Files\Genshin Impact\GenshinImpact.exe</del>,路径问题请自行转换。</p>
+<p>5.安装JDK17，并加入环境变量。</p>
+<p>6.安装mitmdump，首先安装Python，在通过Python的pip包管理器安装mitmdump。</p>
+<p>Python可选择Microsoft store安装，或者winget安装：cmd或终端输入：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget install Python.Python<span class="number">.3</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>其他方法自行发挥。之后安装mitmdump，重新打开cmd或终端输入：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mitmdump</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>7.下载<a target="_blank" rel="noopener" href="https://www.filefactory.com/file/78izlam9p6o2/global-metadata.dat">global-metadata.dat</a>文件</p>
+<h2 id="制作"><a href="#制作" class="headerlink" title="制作"></a>制作</h2><p>1.进入解压好的Grasscutter-2.8源代码文件夹，空白处右键选择在终端中打开，或者在文件路径栏输入cmd回车，输入以下命令（确保JDK版本正确不然会报错）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.\gradlew.bat</span><br><span class="line">.\gradlew jar</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>编译完成将生成jar文件，文件名如grasscutter-1.2.2-dev.jar，将其重命名为grasscutter.jar</p>
+<p>可以使用编译好的jar文件，版本正确即可。</p>
+<p>2.在Grasscutter-2.8源代码文件夹新建resources文件夹，将Grasscutter_Resources-2.8\Resources下的文件夹全部移动至Grasscutter-2.8\resources目录下。</p>
+<h3 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h3><p>1.依然是Grasscutter-2.8文件夹，空白处右键选择在终端中打开，或者在文件路径栏输入cmd回车，输入以下命令（不要关闭窗口）：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mitmdump -s proxy.py -k</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>2.进入C:\Users\用户名.mitmproxy目录，双击打开mitmproxy-ca-cert.cer文件，依次选择安装证书-存储位置：本地计算机-将所有证书放入下列存储-浏览-受信任的根证书颁发机构-下一页-完成。</p>
+<p>3.打开设置-网络和Internet-代理-使用代理服务器：设置-打开使用代理服务器开关，代理IP地址填入127.0.0.1，端口填入8080（这里需要填入mitmdump监听的端口，如果修改了监听端口请自行选择），之后选择保存。</p>
+<p>4.回到Grasscutter-2.8文件夹，双击运行start.cmd，服务端启动完毕（不要关闭窗口）。如果提示选择语言，输入chs回车即可。如需关闭服务端则输入stop回车。</p>
+<p>运行成功后你可以输入</p>
+<p> <code>account create 用户名</code> </p>
+<p>例如<code>account create 123456</code><br>创建账户，密码在第一次登陆时直接输入设置即可，将会作为之后的登录密码。</p>
+<p>5.替换global-metadata.dat文件（针对于2.8版本），将下载的global-metadata.dat文件复制到<del>C:\Program Files\Genshin Impact\GenshinImpact_Data\Managed\Metadata</del>和<del>C:\Program Files\Genshin Impact\GenshinImpact_Data\Native\Data\Metadata</del>目录下，覆盖原文件，建议先备份原文件。</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>双击启动<del>C:\Program Files\Genshin Impact\GenshinImpact.exe</del></p>
+<h3 id="部署失败问题"><a href="#部署失败问题" class="headerlink" title="部署失败问题"></a>部署失败问题</h3><p>部署失败的很多，通常与jar文件是否可用，文件的对应版本是否一致或正确，客户端是否正确修改等等有关，如果遇到难以解决的问题除了向专业人士请教或使用搜索引擎外，您也可以尝试使用Linux服务器部署，您可以使用一键脚本或docker等工具部署，其部署方式简单且成功率高。</p>
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -152,11 +181,10 @@
           <h2 class="card-text--title text-ellipsis">test_my_site</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
