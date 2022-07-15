@@ -22,7 +22,7 @@
 
   
 
-  <title>Grasscutter-2.8-Windows | blog</title>
+  <title>Grasscutter-2.8.x-Windows | blog</title>
 
   
 
@@ -90,11 +90,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Grasscutter-2.8-Windows</h1>
+          <h1 class="title-wrap">Grasscutter-2.8.x-Windows</h1>
           <h2 class="title-sub-wrap">
             <strong>aucub</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-07-13T13:03:51.000Z" itemprop="datePublished">2022-07-13</time>
+            <time  class="article-date" datetime="2022-07-15T04:04:28.000Z" itemprop="datePublished">2022-07-15</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -106,8 +106,6 @@
     <li><a href="/tags/Windows/">🏷️ Windows</a></li>
   
     <li><a href="/tags/op/">🏷️ op</a></li>
-  
-    <li><a href="/tags/2-8/">🏷️ 2.8</a></li>
   
 </ul>
         </div>
@@ -131,12 +129,12 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>Grasscutter割草机在Windows上的部署-2.8</p>
+        <p>Grasscutter割草机在Windows上的部署-2.8.x</p>
 <span id="more"></span>
-<h3 id="准备需要使用的文件和应用"><a href="#准备需要使用的文件和应用" class="headerlink" title="准备需要使用的文件和应用"></a>准备需要使用的文件和应用</h3><p>1.<a target="_blank" rel="noopener" href="https://codeload.github.com/Grasscutters/Grasscutter/zip/refs/heads/2.8">下载并解压适用于2.8的Grasscutter源代码（也可按需求选择其他版本）</a></p>
-<p>2.<a target="_blank" rel="noopener" href="https://codeload.github.com/Koko-boya/Grasscutter_Resources/zip/refs/heads/2.8">下载并解压适用于2.8的Grasscutter_Resources</a></p>
+<h3 id="准备需要使用的文件和应用"><a href="#准备需要使用的文件和应用" class="headerlink" title="准备需要使用的文件和应用"></a>准备需要使用的文件和应用</h3><p>1.<a target="_blank" rel="noopener" href="https://github.com/aucub/Grasscutters2.8.5/archive/refs/heads/main.zip">下载并解压适用于<del>2.8.5</del>的Grasscutter源代码（也可按需求选择其他版本）</a></p>
+<p>2.<a target="_blank" rel="noopener" href="https://github.com/aucub/Genshin-Impact-resources/archive/refs/heads/main.zip">下载并解压适用于<del>2.8.5</del>的Grasscutter_Resources</a>（不完整）</p>
 <p>3.下载并<a target="_blank" rel="noopener" href="https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-5.0.9-signed.msi">安装MongoDB Community Server</a>，如无修改安装目录的需求一路点确认即可。</p>
-<p>4.准备op2.8非大陆版本的客户端，建议登陆一次，下载需要更新的资源，大陆版本也可。本文以非大陆版本为例，<del>GenshinImpact.exe</del>路径为<del>C:\Program Files\Genshin Impact\GenshinImpact.exe</del>,路径问题请自行转换。</p>
+<p>4.准备<del>op2.8.5</del><a target="_blank" rel="noopener" href="https://autopatchcn.yuanshen.com/client_app/download/beta_pc/20220708103922_J7gB70oC8LbfoVse/YuanShen_2.8.50_beta.zip">大陆</a>&#x2F;<a target="_blank" rel="noopener" href="https://autopatchhkbeta.yuanshen.ca/client_app/download/beta_pc/20220516111633_WUVnBEHDnBI6cKmM/GenshinImpact_2.8.50_beta.zip">非大陆</a>版本的客户端，本文以非大陆版本为例，<del>GenshinImpact.exe</del>路径为<del>C:FilesImpact.exe</del>,建议使用大陆版本，路径问题请自行转换。</p>
 <p>5.安装JDK17，并加入环境变量。</p>
 <p>6.安装mitmdump，首先安装Python，在通过Python的pip包管理器安装mitmdump。</p>
 <p>Python可选择Microsoft store安装，或者winget安装：cmd或终端输入：</p>
@@ -145,54 +143,50 @@
 <p>其他方法自行发挥。之后安装mitmdump，重新打开cmd或终端输入：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mitmdump</span><br></pre></td></tr></table></figure>
 
-<p>7.下载<a target="_blank" rel="noopener" href="https://www.filefactory.com/file/78izlam9p6o2/global-metadata.dat">global-metadata.dat</a>文件</p>
-<h2 id="制作"><a href="#制作" class="headerlink" title="制作"></a>制作</h2><p>1.进入解压好的Grasscutter-2.8源代码文件夹，空白处右键选择在终端中打开，或者在文件路径栏输入cmd回车，输入以下命令（确保JDK版本正确不然会报错）：</p>
+<p>7.下载非大陆版本<a target="_blank" rel="noopener" href="https://www.filefactory.com/file/3dxc216tliyk/global-metadata.dat">global-metadata.dat</a>文件&#x2F;大陆版本<a target="_blank" rel="noopener" href="https://www.filefactory.com/file/41xhlj4wmhm/global-metadata.dat">global-metadata.dat</a>文件</p>
+<h2 id="制作"><a href="#制作" class="headerlink" title="制作"></a>制作</h2><p>1.进入解压好的<del>Grasscutters2.8.5</del>源代码文件夹，空白处右键选择在终端中打开，或者在文件路径栏输入cmd回车，输入以下命令（确保JDK版本正确不然会报错）：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.\gradlew.bat</span><br><span class="line">.\gradlew jar</span><br></pre></td></tr></table></figure>
 
 <p>编译完成将生成jar文件，文件名如grasscutter-1.2.2-dev.jar，将其重命名为grasscutter.jar</p>
 <p>可以使用编译好的jar文件，版本正确即可。</p>
-<p>2.在Grasscutter-2.8源代码文件夹新建resources文件夹，将Grasscutter_Resources-2.8\Resources下的文件夹全部移动至Grasscutter-2.8\resources目录下。</p>
-<h3 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h3><p>1.依然是Grasscutter-2.8文件夹，空白处右键选择在终端中打开，或者在文件路径栏输入cmd回车，输入以下命令（不要关闭窗口）：</p>
+<p>2.在<del>Grasscutters2.8.5</del>源代码文件夹新建resources文件夹，将<del>Genshin-Impact-resources</del>下的文件夹全部移动至<del>Grasscutters2.8.5\resources</del>目录下。。</p>
+<h3 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h3><p>1.依然是<del>Grasscutters2.8.5</del>文件夹，空白处右键选择在终端中打开，或者在文件路径栏输入cmd回车，输入以下命令（不要关闭窗口）：</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mitmdump -s proxy.<span class="property">py</span> -k</span><br></pre></td></tr></table></figure>
 
 <p>2.进入C:\Users\用户名\.mitmproxy目录，双击打开mitmproxy-ca-cert.cer文件，依次选择安装证书-存储位置：本地计算机-将所有证书放入下列存储-浏览-受信任的根证书颁发机构-下一页-完成。</p>
 <p>3.打开设置-网络和Internet-代理-使用代理服务器：设置-打开使用代理服务器开关，代理IP地址填入127.0.0.1，端口填入8080（这里需要填入mitmdump监听的端口，如果修改了监听端口请自行选择），之后选择保存。</p>
-<p>4.回到Grasscutter-2.8文件夹，双击运行start.cmd，服务端启动完毕（不要关闭窗口）。如果提示选择语言，输入chs回车即可。如需关闭服务端则输入stop回车。</p>
+<p>4.回到<del>Grasscutters2.8.5</del>文件夹，双击运行start.cmd，服务端启动完毕（不要关闭窗口）。如需关闭服务端则输入stop回车。</p>
 <p>运行成功后你可以输入</p>
-<p> <code>account create 用户名</code> </p>
-<p>例如<code>account create 123456</code><br>创建账户，密码在第一次登陆时直接输入设置即可，将会作为之后的登录密码。</p>
-<p>5.检查Grasscutter-2.8文件夹，现在至少应该存在以下文件或目录。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Grasscutter</span>-<span class="number">2.8</span></span><br><span class="line">├── config.<span class="property">json</span></span><br><span class="line">├── data</span><br><span class="line">├── grasscutter.<span class="property">jar</span></span><br><span class="line">├── keystore.<span class="property">p12</span></span><br><span class="line">├── proto</span><br><span class="line">├── proxy.<span class="property">py</span></span><br><span class="line">├── proxy_config.<span class="property">py</span></span><br><span class="line">├── resources</span><br><span class="line">├── start.<span class="property">cmd</span></span><br><span class="line">└── start_config.<span class="property">cmd</span></span><br></pre></td></tr></table></figure>
+<p><code>account create 用户名</code></p>
+<p>例如<code>account create 123456</code> 创建账户，密码在第一次登陆时直接输入设置即可，将会作为之后的登录密码。</p>
+<p>5.检查<del>Grasscutters2.8.5</del>文件夹，现在至少应该存在以下文件或目录。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">~~<span class="title class_">Grasscutters2</span><span class="number">.8</span><span class="number">.5</span>~~</span><br><span class="line">├── config.<span class="property">json</span></span><br><span class="line">├── data</span><br><span class="line">├── grasscutter.<span class="property">jar</span></span><br><span class="line">├── keystore.<span class="property">p12</span></span><br><span class="line">├── proto</span><br><span class="line">├── proxy.<span class="property">py</span></span><br><span class="line">├── proxy_config.<span class="property">py</span></span><br><span class="line">├── resources</span><br><span class="line">├── start.<span class="property">cmd</span></span><br><span class="line">└── start_config.<span class="property">cmd</span></span><br></pre></td></tr></table></figure>
 
-<p>6.替换global-metadata.dat文件（针对于2.8版本），将下载的global-metadata.dat文件复制到<del>C:\Program Files\Genshin Impact\GenshinImpact_Data\Managed\Metadata</del>和<del>C:\Program Files\Genshin Impact\GenshinImpact_Data\Native\Data\Metadata</del>目录下，覆盖原文件，建议先备份原文件。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Genshin</span> <span class="title class_">Impact</span></span><br><span class="line">├── <span class="title class_">GenshinImpact</span>.<span class="property">exe</span></span><br><span class="line">├── <span class="title class_">GenshinImpact</span>_Data</span><br><span class="line">│   ├── <span class="title class_">Managed</span></span><br><span class="line">│   │   └── <span class="title class_">Metadata</span></span><br><span class="line">│   │       └── <span class="variable language_">global</span>-metadata.<span class="property">dat</span>   </span><br><span class="line">│   └── <span class="title class_">Native</span></span><br><span class="line">│       └── <span class="title class_">Data</span></span><br><span class="line">│           └── <span class="title class_">Metadata</span></span><br><span class="line">│               └── <span class="variable language_">global</span>-metadata.<span class="property">dat</span> </span><br><span class="line">├── <span class="title class_">UnityPlayer</span>.<span class="property">dll</span></span><br><span class="line">├── mhypbase.<span class="property">dll</span></span><br><span class="line">├── mhyprot2.<span class="property">Sys</span></span><br><span class="line">├── mhyprot2.<span class="property">Sys</span>.<span class="property">bak</span></span><br><span class="line">├── mhyprot3.<span class="property">Sys</span></span><br><span class="line">├── mhyprot3.<span class="property">Sys</span>.<span class="property">bak</span></span><br><span class="line">└── pkg_version</span><br></pre></td></tr></table></figure>
+<p>6.替换global-metadata.dat文件，将下载的global-metadata.dat文件复制到<del>C:\Program Files\Genshin Impact\GenshinImpact_Data\Managed\Metadata</del>和<del>C:\Program Files\Genshin Impact\GenshinImpact_Data\Native\Data\Metadata</del>目录下，覆盖原文件，建议先备份原文件。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">~~<span class="title class_">Genshin</span> <span class="title class_">Impact</span>~~</span><br><span class="line">├── <span class="title class_">GenshinImpact</span>.<span class="property">exe</span></span><br><span class="line">├── <span class="title class_">GenshinImpact</span>_Data</span><br><span class="line">│   ├── <span class="title class_">Managed</span></span><br><span class="line">│   │   └── <span class="title class_">Metadata</span></span><br><span class="line">│   │       └── <span class="variable language_">global</span>-metadata.<span class="property">dat</span></span><br><span class="line">│   └── <span class="title class_">Native</span></span><br><span class="line">│       └── <span class="title class_">Data</span></span><br><span class="line">│           └── <span class="title class_">Metadata</span></span><br><span class="line">│               └── <span class="variable language_">global</span>-metadata.<span class="property">dat</span></span><br><span class="line">├── <span class="title class_">UnityPlayer</span>.<span class="property">dll</span></span><br><span class="line">├── mhypbase.<span class="property">dll</span></span><br><span class="line">├── mhyprot2.<span class="property">Sys</span></span><br><span class="line">├── mhyprot2.<span class="property">Sys</span>.<span class="property">bak</span></span><br><span class="line">├── mhyprot3.<span class="property">Sys</span></span><br><span class="line">├── mhyprot3.<span class="property">Sys</span>.<span class="property">bak</span></span><br><span class="line">└── pkg_version</span><br></pre></td></tr></table></figure>
 
-<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>双击启动<del>C:\Program Files\Genshin Impact\GenshinImpact.exe</del><br>游戏内可通过与Server聊天执行命令<br>如获取角色，武器等：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/give all</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="部署失败问题"><a href="#部署失败问题" class="headerlink" title="部署失败问题"></a>部署失败问题</h3><p>部署失败的很多，通常与jar文件是否可用，文件的对应版本是否一致或正确，客户端是否正确修改等等有关，如果遇到难以解决的问题除了向专业人士请教或使用搜索引擎外，您也可以尝试使用Linux服务器部署，您可以使用一键脚本或docker等工具部署，其部署方式简单且成功率高。</p>
-
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>双击启动<del>C:\Program Files\Genshin Impact\GenshinImpact.exe,</del>游戏内可通过与Server聊天执行命令 如获取角色，武器等：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/give all c6 r5 lv90 x99999</span><br></pre></td></tr></table></figure>
       </section>
 
       
       
         <nav class="article-nav">
           
+          
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2022/07/15/Grasscutter-2-8-5-Windows/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Grasscutter-2.8.x-Windows</h2>
+        <a href="/2022/07/13/Grasscutter-2-8-Windows/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Grasscutter-2.8-Windows</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
