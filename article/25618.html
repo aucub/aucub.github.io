@@ -16,24 +16,24 @@
   <meta name="author" content="yuloury">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Grasscutter割草机在Windows上的部署-2.8.x">
+    <meta name="description" content="Grasscutter割草机在Docker上的部署-2.8.x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Grasscutter-2.8.5-Windows">
-<meta property="og:url" content="https://aucub.github.io/2022/07/15/Grasscutter-2-8-5-Windows/index.html">
+<meta property="og:title" content="Grasscutter-2.8.5-Docker">
+<meta property="og:url" content="https://aucub.github.io/article/25618.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="Grasscutter割草机在Windows上的部署-2.8.x">
+<meta property="og:description" content="Grasscutter割草机在Docker上的部署-2.8.x">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-15T04:04:28.000Z">
-<meta property="article:modified_time" content="2022-07-18T13:10:59.727Z">
+<meta property="article:published_time" content="2022-07-15T20:44:28.000Z">
+<meta property="article:modified_time" content="2022-07-18T13:09:38.660Z">
 <meta property="article:author" content="yuloury">
 <meta property="article:tag" content="Grasscutter">
-<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="Docker">
 <meta property="article:tag" content="op2.8.5">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Grasscutter-2.8.5-Windows - blog</title>
+  <title>Grasscutter-2.8.5-Docker - blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Grasscutter-2.8.5-Windows"></span>
+            <span id="subtitle" data-typed-text="Grasscutter-2.8.5-Docker"></span>
           
         </div>
 
@@ -185,8 +185,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-15 12:04" pubdate>
-          2022年7月15日 中午
+        <time datetime="2022-07-16 04:44" pubdate>
+          2022年7月16日 凌晨
         </time>
       </span>
     
@@ -197,7 +197,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          1.7k 字
         
       </span>
     
@@ -208,7 +208,7 @@
         
         
         
-          19 分钟
+          14 分钟
         
       </span>
     
@@ -246,51 +246,52 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Grasscutter-2.8.5-Windows</h1>
+            <h1 style="display: none">Grasscutter-2.8.5-Docker</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Grasscutter割草机在Windows上的部署-2.8.x</p>
+                <p>Grasscutter割草机在Docker上的部署-2.8.x</p>
 <span id="more"></span>
-<h3 id="准备需要使用的文件和应用"><a href="#准备需要使用的文件和应用" class="headerlink" title="准备需要使用的文件和应用"></a>准备需要使用的文件和应用</h3><p>1.<a target="_blank" rel="noopener" href="https://github.com/aucub/Grasscutters2.8.5/archive/refs/heads/main.zip">下载并解压适用于<del>2.8.5</del>的Grasscutter源代码（也可按需求选择其他版本）</a></p>
-<p>2.<a target="_blank" rel="noopener" href="https://github.com/aucub/Genshin-Impact-resources/archive/refs/heads/main.zip">下载并解压适用于<del>2.8.5</del>的Grasscutter_Resources</a>（不完整）</p>
-<p>3.下载并<a target="_blank" rel="noopener" href="https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-5.0.9-signed.msi">安装MongoDB Community Server</a>，如无修改安装目录的需求一路点确认即可。</p>
-<p>4.准备<del>op2.8.5</del><a target="_blank" rel="noopener" href="https://autopatchcn.yuanshen.com/client_app/download/beta_pc/20220708103922_J7gB70oC8LbfoVse/YuanShen_2.8.50_beta.zip">大陆</a>&#x2F;<a target="_blank" rel="noopener" href="https://autopatchhkbeta.yuanshen.ca/client_app/download/beta_pc/20220516111633_WUVnBEHDnBI6cKmM/GenshinImpact_2.8.50_beta.zip">非大陆</a>版本的客户端，本文以非大陆版本为例，<del>GenshinImpact.exe</del>路径为<del>C:\Program Files\Genshin Impact\GenshinImpact.exe</del>,建议使用大陆版本，路径问题请自行转换。</p>
-<p>5.安装JDK17，并加入环境变量。</p>
-<p>6.安装mitmdump，首先安装Python，在通过Python的pip包管理器安装mitmdump。</p>
-<p>Python可选择Microsoft store安装，或者winget安装：cmd或终端输入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">winget install Python.Python.3<br></code></pre></td></tr></table></figure>
+<h2 id="1-安装Docker"><a href="#1-安装Docker" class="headerlink" title="1.安装Docker"></a>1.安装Docker</h2><h3 id="1-daocloud-一键安装命令："><a href="#1-daocloud-一键安装命令：" class="headerlink" title="(1)daocloud 一键安装命令："></a>(1)daocloud 一键安装命令：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl -sSL https://get.daocloud.io/docker | sh<br></code></pre></td></tr></table></figure>
 
-<p>其他方法自行发挥。之后安装mitmdump，重新打开cmd或终端输入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pip install mitmdump<br></code></pre></td></tr></table></figure>
+<h3 id="2-或手动安装："><a href="#2-或手动安装：" class="headerlink" title="(2)或手动安装："></a>(2)或手动安装：</h3><p>卸载旧版本（如果有）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get remove docker docker-engine docker.io containerd runc<br></code></pre></td></tr></table></figure>
 
-<p>7.下载非大陆版本<a target="_blank" rel="noopener" href="https://www.filefactory.com/file/3dxc216tliyk/global-metadata.dat">global-metadata.dat</a>文件&#x2F;大陆版本<a target="_blank" rel="noopener" href="https://www.filefactory.com/file/41xhlj4wmhm/global-metadata.dat">global-metadata.dat</a>文件</p>
-<h2 id="制作"><a href="#制作" class="headerlink" title="制作"></a>制作</h2><p>1.进入解压好的<del>Grasscutters2.8.5</del>源代码文件夹，空白处右键选择在终端中打开，或者在文件路径栏输入cmd回车，输入以下命令（确保JDK版本正确不然会报错）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">.\gradlew.bat<br>.\gradlew jar<br></code></pre></td></tr></table></figure>
+<p>设置仓库：</p>
+<p>更新索引：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br></code></pre></td></tr></table></figure>
 
-<p>编译完成将生成jar文件，文件名如grasscutter-1.2.2-dev.jar，将其重命名为grasscutter.jar</p>
-<p>可以使用编译好的<a target="_blank" rel="noopener" href="https://www.filefactory.com/file/l7t5ms9t8jk/grasscutter-1.2.2-dev-test.jar">jar文件</a></p>
-<p>2.在<del>Grasscutters2.8.5</del>源代码文件夹新建resources文件夹，将<del>Genshin-Impact-resources</del>下的文件夹全部移动至<del>Grasscutters2.8.5\resources</del>目录下。。</p>
-<h3 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h3><p>1.依然是<del>Grasscutters2.8.5</del>文件夹，空白处右键选择在终端中打开，或者在文件路径栏输入cmd回车，输入以下命令（不要关闭窗口）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mitmdump -s proxy.py -k<br></code></pre></td></tr></table></figure>
+<p>安装 apt 依赖包:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"> sudo apt-get install \    apt-transport-https \    ca-certificates \    curl \    gnupg-agent \    software-properties-common<br></code></pre></td></tr></table></figure>
 
-<p>2.进入C:\Users\用户名\.mitmproxy目录，双击打开mitmproxy-ca-cert.cer文件，依次选择安装证书-存储位置：本地计算机-将所有证书放入下列存储-浏览-受信任的根证书颁发机构-下一页-完成。</p>
-<p>3.打开设置-网络和Internet-代理-使用代理服务器：设置-打开使用代理服务器开关，代理IP地址填入127.0.0.1，端口填入8080（这里需要填入mitmdump监听的端口，如果修改了监听端口请自行选择），之后选择保存。</p>
-<p>4.回到<del>Grasscutters2.8.5</del>文件夹，双击运行start.cmd，服务端启动完毕（不要关闭窗口）。如需关闭服务端则输入stop回车。</p>
-<p>运行成功后你可以输入</p>
-<p><code>account create 用户名</code></p>
-<p>例如<code>account create 123456</code> 创建账户，密码在第一次登陆时直接输入设置即可，将会作为之后的登录密码。</p>
-<p>5.检查<del>Grasscutters2.8.5</del>文件夹，现在至少应该存在以下文件或目录。</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs TEXT">Grasscutters2.8.5<br>├── config.json<br>├── data<br>├── grasscutter.jar<br>├── keystore.p12<br>├── proto<br>├── proxy.py<br>├── proxy_config.py<br>├── resources<br>├── start.cmd<br>└── start_config.cmd<br></code></pre></td></tr></table></figure>
+<p>添加 Docker 的官方 GPG 密钥：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -<br></code></pre></td></tr></table></figure>
 
-<p>6.替换global-metadata.dat文件，将下载的global-metadata.dat文件复制到<del>C:\Program Files\Genshin Impact\GenshinImpact_Data\Managed\Metadata</del>和<del>C:\Program Files\Genshin Impact\GenshinImpact_Data\Native\Data\Metadata</del>目录下，覆盖原文件，建议先备份原文件。</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs TEXT">Genshin Impact<br>├── GenshinImpact.exe<br>├── GenshinImpact_Data<br>│   ├── Managed<br>│   │   └── Metadata<br>│   │       └── global-metadata.dat<br>│   └── Native<br>│       └── Data<br>│           └── Metadata<br>│               └── global-metadata.dat<br>├── UnityPlayer.dll<br>├── mhypbase.dll<br>├── mhyprot2.Sys<br>├── mhyprot2.Sys.bak<br>├── mhyprot3.Sys<br>├── mhyprot3.Sys.bak<br>└── pkg_version<br></code></pre></td></tr></table></figure>
+<p>使用以下指令设置稳定版仓库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo add-apt-repository \   &quot;deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/ **\**  $(lsb_release -cs) **\**  stable&quot;<br></code></pre></td></tr></table></figure>
 
-<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>双击启动<del>C:\Program Files\Genshin Impact\GenshinImpact.exe,</del>游戏内可通过与Server聊天执行命令 如获取角色，武器等：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">/give all c6 r5 lv90 x99999<br></code></pre></td></tr></table></figure>
-<p>角色，武器，物品，场景说明<a target="_blank" rel="noopener" href="https://www.filefactory.com/file/1xsylk9teeu4/2.8.x-GM_Handbook.txt"><del>2.8.5-GM_Handbook.txt</del></a></p>
+<p>更新 apt 包索引：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br></code></pre></td></tr></table></figure>
 
+<p>安装Docker Engine-Community：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install docker-ce docker-ce-cli containerd.io<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-docker-compose"><a href="#2-docker-compose" class="headerlink" title="2.docker-compose"></a>2.docker-compose</h2><h3 id="1-安装docker-compose"><a href="#1-安装docker-compose" class="headerlink" title="(1)安装docker-compose"></a>(1)安装docker-compose</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install docker-compose<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-安装编辑器"><a href="#2-安装编辑器" class="headerlink" title="(2)安装编辑器"></a>(2)安装编辑器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install neovim<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-编写docker-compose-yml"><a href="#3-编写docker-compose-yml" class="headerlink" title="(3)编写docker-compose.yml"></a>(3)编写docker-compose.yml</h3><p>下载文件<a target="_blank" rel="noopener" href="https://github.com/aucub/Docker-Grasscutter/blob/9c5de2e01073a0f4dc3a02dfac1e25b3eff472ad/docker-compose.yml">https://github.com/aucub/Docker-Grasscutter/blob/9c5de2e01073a0f4dc3a02dfac1e25b3eff472ad/docker-compose.yml</a></p>
+<p>创建文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">nvim docker-compose.yml<br></code></pre></td></tr></table></figure>
+
+<p>输入按I键，ctrl+shift+v写完按esc，然后eq！保存</p>
+<h3 id="4-pull镜像"><a href="#4-pull镜像" class="headerlink" title="(4)pull镜像"></a>(4)pull镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo docker-compose pull<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-启动"><a href="#5-启动" class="headerlink" title="(5)启动"></a>(5)启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo docker-compose up -d<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-连接"><a href="#3-连接" class="headerlink" title="3.连接"></a>3.连接</h2><p>等待几分钟开始连接，相关教程可参考<a target="_blank" rel="noopener" href="https://game.yuuki.me/posts/how-connect">https://game.yuuki.me/posts/how-connect</a><br>不要忘记替换global-metadata.dat，参考Windows端</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">import</span> <span class="hljs-title class_">System</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">System</span>.<span class="hljs-property">Windows</span>.<span class="hljs-property">Forms</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Fiddler</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">System</span>.<span class="hljs-property">Text</span>.<span class="hljs-property">RegularExpressions</span>;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Handlers</span><br>&#123;<br><span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">OnBeforeRequest</span>(<span class="hljs-params">oS: Session</span>) &#123;<br><span class="hljs-keyword">if</span>(oS.<span class="hljs-property">host</span>.<span class="hljs-title class_">EndsWith</span>(<span class="hljs-string">&quot;.yuanshen.com&quot;</span>) || oS.<span class="hljs-property">host</span>.<span class="hljs-title class_">EndsWith</span>(<span class="hljs-string">&quot;.hoyoverse.com&quot;</span>) || oS.<span class="hljs-property">host</span>.<span class="hljs-title class_">EndsWith</span>(<span class="hljs-string">&quot;.mihoyo.com&quot;</span>)) &#123;<br><span class="hljs-comment">//This can also be replaced with another ip/domain server.</span><br><span class="hljs-comment">//oS.host = &quot;de.game.yuuki.me&quot;;</span><br><span class="hljs-comment">//oS.host = &quot;http://sg.game.yuuki.me/&quot;;</span><br><span class="hljs-comment">//oS.host = &quot;localhost&quot;;</span><br>oS.<span class="hljs-property">host</span> = <span class="hljs-string">&quot;2.0.0.100&quot;</span>;<span class="hljs-comment">//2.0.0.100替换成服务器公网IP</span><br>&#125;<br>&#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -304,7 +305,7 @@
       
         <a href="/tags/Grasscutter/">#Grasscutter</a>
       
-        <a href="/tags/Windows/">#Windows</a>
+        <a href="/tags/Docker/">#Docker</a>
       
         <a href="/tags/op2-8-5/">#op2.8.5</a>
       
@@ -320,18 +321,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/16/Grasscutter-2-8-5-Docker/" title="Grasscutter-2.8.5-Docker">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Grasscutter-2.8.5-Docker</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/13/Grasscutter-2-8-Windows/" title="Grasscutter-2.8-Windows">
-                        <span class="hidden-mobile">Grasscutter-2.8-Windows</span>
+                      <a href="/article/51338.html" title="Grasscutter-2.8.5-Windows">
+                        <span class="hidden-mobile">Grasscutter-2.8.5-Windows</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
