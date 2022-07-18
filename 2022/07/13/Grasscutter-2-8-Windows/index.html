@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/blog.png">
+  <link rel="icon" href="/img/blog.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -24,12 +24,11 @@
 <meta property="og:description" content="Grasscutter割草机在Windows上的部署-2.8">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-13T13:03:51.000Z">
-<meta property="article:modified_time" content="2022-07-18T10:25:33.655Z">
+<meta property="article:modified_time" content="2022-07-18T13:17:00.001Z">
 <meta property="article:author" content="yuloury">
 <meta property="article:tag" content="Grasscutter">
 <meta property="article:tag" content="Windows">
-<meta property="article:tag" content="op">
-<meta property="article:tag" content="2.8">
+<meta property="article:tag" content="op2.8">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -72,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"aucub.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":323550335,"gtag":323550335,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"aucub.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":"G-X59PX1J2TL","gtag":"G-X59PX1J2TL","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -262,20 +261,20 @@
 <p>5.安装JDK17，并加入环境变量。</p>
 <p>6.安装mitmdump，首先安装Python，在通过Python的pip包管理器安装mitmdump。</p>
 <p>Python可选择Microsoft store安装，或者winget安装：cmd或终端输入：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx">winget install <span class="hljs-title class_">Python</span>.<span class="hljs-property">Python</span><span class="hljs-number">.3</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">winget install Python.Python.3<br></code></pre></td></tr></table></figure>
 
 <p>其他方法自行发挥。之后安装mitmdump，重新打开cmd或终端输入：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx">pip install mitmdump<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pip install mitmdump<br></code></pre></td></tr></table></figure>
 
 <p>7.下载<a target="_blank" rel="noopener" href="https://www.filefactory.com/file/78izlam9p6o2/global-metadata.dat">global-metadata.dat</a>文件</p>
 <h2 id="制作"><a href="#制作" class="headerlink" title="制作"></a>制作</h2><p>1.进入解压好的Grasscutter-2.8源代码文件夹，空白处右键选择在终端中打开，或者在文件路径栏输入cmd回车，输入以下命令（确保JDK版本正确不然会报错）：</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs livescript">.<span class="hljs-string">\gradlew.bat</span><br>.<span class="hljs-string">\gradlew</span> jar<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">.\gradlew.bat<br>.\gradlew jar<br></code></pre></td></tr></table></figure>
 
 <p>编译完成将生成jar文件，文件名如grasscutter-1.2.2-dev.jar，将其重命名为grasscutter.jar</p>
 <p>可以使用编译好的jar文件，版本正确即可。</p>
 <p>2.在Grasscutter-2.8源代码文件夹新建resources文件夹，将Grasscutter_Resources-2.8\Resources下的文件夹全部移动至Grasscutter-2.8\resources目录下。</p>
 <h3 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h3><p>1.依然是Grasscutter-2.8文件夹，空白处右键选择在终端中打开，或者在文件路径栏输入cmd回车，输入以下命令（不要关闭窗口）：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx">mitmdump -s proxy.<span class="hljs-property">py</span> -k<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mitmdump -s proxy.py -k<br></code></pre></td></tr></table></figure>
 
 <p>2.进入C:\Users\用户名\.mitmproxy目录，双击打开mitmproxy-ca-cert.cer文件，依次选择安装证书-存储位置：本地计算机-将所有证书放入下列存储-浏览-受信任的根证书颁发机构-下一页-完成。</p>
 <p>3.打开设置-网络和Internet-代理-使用代理服务器：设置-打开使用代理服务器开关，代理IP地址填入127.0.0.1，端口填入8080（这里需要填入mitmdump监听的端口，如果修改了监听端口请自行选择），之后选择保存。</p>
@@ -284,13 +283,13 @@
 <p> <code>account create 用户名</code> </p>
 <p>例如<code>account create 123456</code><br>创建账户，密码在第一次登陆时直接输入设置即可，将会作为之后的登录密码。</p>
 <p>5.检查Grasscutter-2.8文件夹，现在至少应该存在以下文件或目录。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-title class_">Grasscutter</span>-<span class="hljs-number">2.8</span><br>├── config.<span class="hljs-property">json</span><br>├── data<br>├── grasscutter.<span class="hljs-property">jar</span><br>├── keystore.<span class="hljs-property">p12</span><br>├── proto<br>├── proxy.<span class="hljs-property">py</span><br>├── proxy_config.<span class="hljs-property">py</span><br>├── resources<br>├── start.<span class="hljs-property">cmd</span><br>└── start_config.<span class="hljs-property">cmd</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs TEXT">Grasscutter-2.8<br>├── config.json<br>├── data<br>├── grasscutter.jar<br>├── keystore.p12<br>├── proto<br>├── proxy.py<br>├── proxy_config.py<br>├── resources<br>├── start.cmd<br>└── start_config.cmd<br></code></pre></td></tr></table></figure>
 
 <p>6.替换global-metadata.dat文件（针对于2.8版本），将下载的global-metadata.dat文件复制到<del>C:\Program Files\Genshin Impact\GenshinImpact_Data\Managed\Metadata</del>和<del>C:\Program Files\Genshin Impact\GenshinImpact_Data\Native\Data\Metadata</del>目录下，覆盖原文件，建议先备份原文件。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-title class_">Genshin</span> <span class="hljs-title class_">Impact</span><br>├── <span class="hljs-title class_">GenshinImpact</span>.<span class="hljs-property">exe</span><br>├── <span class="hljs-title class_">GenshinImpact</span>_Data<br>│   ├── <span class="hljs-title class_">Managed</span><br>│   │   └── <span class="hljs-title class_">Metadata</span><br>│   │       └── <span class="hljs-variable language_">global</span>-metadata.<span class="hljs-property">dat</span>   <br>│   └── <span class="hljs-title class_">Native</span><br>│       └── <span class="hljs-title class_">Data</span><br>│           └── <span class="hljs-title class_">Metadata</span><br>│               └── <span class="hljs-variable language_">global</span>-metadata.<span class="hljs-property">dat</span> <br>├── <span class="hljs-title class_">UnityPlayer</span>.<span class="hljs-property">dll</span><br>├── mhypbase.<span class="hljs-property">dll</span><br>├── mhyprot2.<span class="hljs-property">Sys</span><br>├── mhyprot2.<span class="hljs-property">Sys</span>.<span class="hljs-property">bak</span><br>├── mhyprot3.<span class="hljs-property">Sys</span><br>├── mhyprot3.<span class="hljs-property">Sys</span>.<span class="hljs-property">bak</span><br>└── pkg_version<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs TEXT">Genshin Impact<br>├── GenshinImpact.exe<br>├── GenshinImpact_Data<br>│   ├── Managed<br>│   │   └── Metadata<br>│   │       └── global-metadata.dat   <br>│   └── Native<br>│       └── Data<br>│           └── Metadata<br>│               └── global-metadata.dat <br>├── UnityPlayer.dll<br>├── mhypbase.dll<br>├── mhyprot2.Sys<br>├── mhyprot2.Sys.bak<br>├── mhyprot3.Sys<br>├── mhyprot3.Sys.bak<br>└── pkg_version<br></code></pre></td></tr></table></figure>
 
 <h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>双击启动<del>C:\Program Files\Genshin Impact\GenshinImpact.exe</del><br>游戏内可通过与Server聊天执行命令<br>如获取角色，武器等：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx">/give all<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">/give all c6 r5 lv90 x99999<br></code></pre></td></tr></table></figure>
 
 
 <h3 id="部署失败问题"><a href="#部署失败问题" class="headerlink" title="部署失败问题"></a>部署失败问题</h3><p>部署失败的很多，通常与jar文件是否可用，文件的对应版本是否一致或正确，客户端是否正确修改等等有关，如果遇到难以解决的问题除了向专业人士请教或使用搜索引擎外，您也可以尝试使用Linux服务器部署，您可以使用一键脚本或docker等工具部署，其部署方式简单且成功率高。</p>
@@ -310,9 +309,7 @@
       
         <a href="/tags/Windows/">#Windows</a>
       
-        <a href="/tags/op/">#op</a>
-      
-        <a href="/tags/2-8/">#2.8</a>
+        <a href="/tags/op2-8/">#op2.8</a>
       
     </div>
   
@@ -431,7 +428,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <i class="iconfont icon-love"></i> 
     </div>
   
   

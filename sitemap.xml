@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://aucub.github.io/2022/07/13/Grasscutter-2-8-Windows/</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://aucub.github.io/2022/07/15/Grasscutter-2-8-5-Windows/</loc>
     
     <lastmod>2022-07-18</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>https://aucub.github.io/2022/07/16/Grasscutter-2-8-5-Docker/</loc>
-    
-    <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://aucub.github.io/2022/07/13/Grasscutter-2-8-Windows/</loc>
     
     <lastmod>2022-07-18</lastmod>
     
@@ -52,14 +52,21 @@
   </url>
   
   <url>
-    <loc>https://aucub.github.io/tags/op/</loc>
+    <loc>https://aucub.github.io/tags/op2-8-5/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://aucub.github.io/tags/2-8/</loc>
+    <loc>https://aucub.github.io/tags/Docker/</loc>
+    <lastmod>2022-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aucub.github.io/tags/op2-8/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
