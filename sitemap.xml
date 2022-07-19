@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://aucub.github.io/article/51338.html</loc>
+    
+    <lastmod>2022-07-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://aucub.github.io/article/60991.html</loc>
     
     <lastmod>2022-07-19</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://aucub.github.io/article/25618.html</loc>
-    
-    <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://aucub.github.io/article/51338.html</loc>
     
     <lastmod>2022-07-18</lastmod>
     
@@ -54,20 +54,6 @@
   </url>
   
   <url>
-    <loc>https://aucub.github.io/tags/Docker/</loc>
-    <lastmod>2022-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aucub.github.io/tags/op2-8-5/</loc>
-    <lastmod>2022-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://aucub.github.io/tags/Windows/</loc>
     <lastmod>2022-07-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -76,6 +62,20 @@
   
   <url>
     <loc>https://aucub.github.io/tags/op2-8/</loc>
+    <lastmod>2022-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aucub.github.io/tags/Docker/</loc>
+    <lastmod>2022-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aucub.github.io/tags/op2-8-5/</loc>
     <lastmod>2022-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
