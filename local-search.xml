@@ -8,7 +8,7 @@
     <link href="/article/966b8814.html"/>
     <url>/article/966b8814.html</url>
     
-    <content type="html"><![CDATA[<p>GI更新</p><span id="more"></span><h1 id="2-8-51-update"><a href="#2-8-51-update" class="headerlink" title="2.8.51 update"></a>2.8.51 update</h1><p><del>Genshin Impact</del>从<del>2.8.50</del>更新到<del>2.8.51</del></p><p>1.下载非大陆版<del>2.8.50-2.8.51</del>更新包<a href="https://autopatchhkbeta.yuanshen.com/client_app/beta_update/hk4e_global/32/game_2.8.50_2.8.51_hdiff_OZNrQMmXtw3VLsxh.zip">https://autopatchhkbeta.yuanshen.com/client_app&#x2F;beta_update&#x2F;hk4e_global&#x2F;32&#x2F;game_2.8.50_2.8.51_hdiff_OZNrQMmXtw3VLsxh.zip</a></p><p>2.下载非大陆版global-metadata.dat<a href="https://anonfiles.com/Bcj2i3z1y6/global-metadata_dat">https://anonfiles.com/Bcj2i3z1y6/global-metadata_dat</a></p><p>3.将更新包解压到安装根目录即<del>GenshinImpact.exe</del>所在目录使其覆盖<del>GenshinImpact.exe</del>等文件</p><p>4.替换global-metadata.dat(参考前面的文章)</p><p>5.开始享受</p>]]></content>
+    <content type="html"><![CDATA[<p>GI更新</p><span id="more"></span><h1 id="2-8-51-update"><a href="#2-8-51-update" class="headerlink" title="2.8.51 update"></a>2.8.51 update</h1><p><del>Genshin Impact</del>从<del>2.8.50</del>更新到<del>2.8.51</del></p><p>1.下载非大陆版<del>2.8.50-2.8.51</del>更新包<a href="https://autopatchhkbeta.yuanshen.com/client_app/beta_update/hk4e_global/32/game_2.8.50_2.8.51_hdiff_OZNrQMmXtw3VLsxh.zip">https://autopatchhkbeta.yuanshen.com/client_app&#x2F;beta_update&#x2F;hk4e_global&#x2F;32&#x2F;game_2.8.50_2.8.51_hdiff_OZNrQMmXtw3VLsxh.zip</a></p><p>2.下载非大陆版global-metadata.dat<a href="https://anonfiles.com/Bcj2i3z1y6/global-metadata_dat">https://anonfiles.com/Bcj2i3z1y6/global-metadata_dat</a><br>或者Gdrive<a href="https://drive.google.com/file/d/1XUzXcw3UQAprkF_fwquG7ntuPF461Fc-/view?usp=sharing">https://drive.google.com/file/d/1XUzXcw3UQAprkF_fwquG7ntuPF461Fc-&#x2F;view?usp&#x3D;sharing</a><br>或者<a href="https://production.cloudflare.docker.com/registry-v2/docker/registry/v2/blobs/sha256/11/11aa615826864726ebbab79834665b997a4c415eac1f304f8cd3f5cdee287240/data?verify=1658213213-J2QxDjfnOY14v4ArL7MMPH6iwsY=">直链</a></p><p>3.将更新包解压到安装根目录即<del>GenshinImpact.exe</del>所在目录使其覆盖<del>GenshinImpact.exe</del>等文件</p><p>4.替换global-metadata.dat(参考前面的文章)</p><p>5.开始享受</p>]]></content>
     
     
     
@@ -29,9 +29,9 @@
       
       <tag>Grasscutter</tag>
       
-      <tag>op2.8.5</tag>
-      
       <tag>Docker</tag>
+      
+      <tag>op2.8.5</tag>
       
     </tags>
     
@@ -52,9 +52,9 @@
       
       <tag>Grasscutter</tag>
       
-      <tag>Windows</tag>
-      
       <tag>op2.8.5</tag>
+      
+      <tag>Windows</tag>
       
     </tags>
     
