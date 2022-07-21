@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 Allow: /archives/
 Allow: /tags/
+Allow: /article/
 
 Disallow: /vendors/
 Disallow: /fonts/
